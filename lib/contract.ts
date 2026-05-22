@@ -30,3 +30,4 @@ export const BADGE_THEMES = [
   { id: 5, label: "VOID",     accent: "#bf00ff", img: "50/200/200" },
   { id: 6, label: "REACTOR",  accent: "#ff6600", img: "60/200/200" },
 ] as const;
+export const CONTRACT_ADDRESS = V1_ADDRESS;
