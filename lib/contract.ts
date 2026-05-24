@@ -14,7 +14,7 @@ export const vibeBadgeContract = {
 // Replace with your new deployed contract address
 export const V2_ADDRESS =
   (process.env.NEXT_PUBLIC_V2_CONTRACT_ADDRESS as `0x${string}`) ??
-  "0x0330895d92E52C978C5BE213A91caB0706038391";
+  "0xA4AaCb4F47E700Df36F73fd4288f7276cfF6f5aB";
 
 export const customVibeContract = {
   address: V2_ADDRESS,
