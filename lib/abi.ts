@@ -12,13 +12,13 @@ export const VIBE_BADGE_ABI = [
 // ── V2: CustomVibeCreator (your actual deployed contract) ──────────────────
 export const CUSTOM_VIBE_ABI = [
   { name: "totalMinted", type: "function", stateMutability: "view",     inputs: [], outputs: [{ name: "", type: "uint256" }] },
-  { name: "mintPrice",   type: "function", stateMutability: "view",     inputs: [], outputs: [{ name: "", type: "uint256" }] },
+
   { name: "balanceOf",   type: "function", stateMutability: "view",     inputs: [{ name: "owner", type: "address" }], outputs: [{ name: "", type: "uint256" }] },
   { name: "ownerOf",     type: "function", stateMutability: "view",     inputs: [{ name: "tokenId", type: "uint256" }], outputs: [{ name: "", type: "address" }] },
   {
     name: "mintCustom",
     type: "function",
-    stateMutability: "payable",          // ← payable, not nonpayable
+    stateMutability: "nonpayable",          // ← payable, not nonpayable
     inputs: [
       { name: "name",  type: "string" }, // ← no "to" arg
       { name: "desc",  type: "string" },
