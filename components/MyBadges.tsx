@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useAccount, useReadContract, useReadContracts } from "wagmi";
-import { vibeBadgeContract } from "@/lib/contract";
+import { vibeBadgeContract, CONTRACT_ADDRESS } from "@/lib/contract";
 import { VIBE_BADGE_ABI } from "@/lib/abi";
 import { CONTRACT_ADDRESS } from "@/lib/contract";
 
