@@ -1,4 +1,4 @@
-import { CONTRACT_ADDRESS } from "@/lib/contract";
+import { V1_ADDRESS as CONTRACT_ADDRESS } from "@/lib/contract";
 import { arcTestnet } from "@/lib/chain";
 
 export function Footer() {
