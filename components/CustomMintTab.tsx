@@ -32,7 +32,7 @@ export function CustomMintTab() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const { data: totalMinted, refetch } = useReadContract({ ...customVibeContract, functionName: "totalMinted" });
-  const { data: mintPrice }            = useReadContract({ ...customVibeContract, functionName: "mintPrice" });
+  
   const { data: balance }              = useReadContract({
     ...customVibeContract, functionName: "balanceOf",
     args: address ? [address] : undefined,
