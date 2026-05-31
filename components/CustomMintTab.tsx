@@ -68,7 +68,6 @@ export function CustomMintTab() {
   const finalImg = imgMode === "url" ? urlInput.trim() : imgSrc;
   const valid    = name.trim().length > 0 && finalImg.length > 0;
   const busy     = step === "signing" || step === "pending";
-  const price    = mintPrice ?? MINT_PRICE;
 
   function handleMint() {
     if (!valid) return;
@@ -78,7 +77,6 @@ export function CustomMintTab() {
       ...customVibeContract,
       functionName: "mintCustom",
       args: [name.trim(), desc.trim(), finalImg], // ← matches contract: (name, desc, image)
-      value: price as bigint,                      // ← send 0.01 as required
     });
   }
 
