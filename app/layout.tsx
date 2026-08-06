@@ -3,12 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Arc Vibe Badge Minter",
-  description: "Mint your exclusive Arc Vibe Badge NFT on Arc Testnet",
-  openGraph: {
-    title: "Arc Vibe Badge Minter",
-    description: "Exclusive NFT badges on Arc Testnet",
-  },
+  title: "Vibe — Identity & USDC Payments on Arc",
+  description: "Verified Identity and Instant USDC Payments on Arc Testnet",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

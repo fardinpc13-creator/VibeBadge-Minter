@@ -1,5 +1,4 @@
 "use client";
-
 import { getDefaultConfig, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
@@ -8,7 +7,7 @@ import { arcTestnet } from "@/lib/chain";
 import "@rainbow-me/rainbowkit/styles.css";
 
 const config = getDefaultConfig({
-  appName: "Arc Vibe Badge Minter",
+  appName: "Vibe",
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? "YOUR_WALLETCONNECT_PROJECT_ID",
   chains: [arcTestnet, mainnet],
   ssr: true,
@@ -16,7 +15,7 @@ const config = getDefaultConfig({
 
 const queryClient = new QueryClient();
 
-const arcRainbowTheme = darkTheme({
+const theme = darkTheme({
   accentColor: "#00f5ff",
   accentColorForeground: "#03030a",
   borderRadius: "none",
@@ -28,7 +27,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider theme={arcRainbowTheme} initialChain={arcTestnet}>
+        <RainbowKitProvider theme={theme} initialChain={arcTestnet}>
           {children}
         </RainbowKitProvider>
       </QueryClientProvider>
