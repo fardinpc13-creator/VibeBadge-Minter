@@ -7,19 +7,16 @@ import { Footer } from "@/components/Footer";
 import { PaymentClaimModal } from "@/components/PaymentClaimModal";
 
 export default function Home() {
-  const [paymentData, setPaymentData] = useState<{ amount: string; note: string } | null>(null);
+  const [claimId, setClaimId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Detect payment link params
     const params = new URLSearchParams(window.location.search);
-    const amount = params.get("amount");
-    const note   = params.get("note") ?? "";
-    if (amount) setPaymentData({ amount, note });
+    const id = params.get("claim");
+    if (id) setClaimId(id);
   }, []);
 
   return (
     <main className="min-h-screen bg-dark-900 cyber-grid">
-      {/* Ambient glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-10"
           style={{ background: "radial-gradient(circle,#00f5ff 0%,transparent 70%)" }}/>
@@ -36,14 +33,10 @@ export default function Home() {
         <Footer />
       </div>
 
-      {paymentData && (
+      {claimId && (
         <PaymentClaimModal
-          amount={paymentData.amount}
-          note={paymentData.note}
-          onClose={() => {
-            setPaymentData(null);
-            window.history.replaceState({}, "", "/");
-          }}
+          linkId={claimId}
+          onClose={() => { setClaimId(null); window.history.replaceState({}, "", "/"); }}
         />
       )}
     </main>
