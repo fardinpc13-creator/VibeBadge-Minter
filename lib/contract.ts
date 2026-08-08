@@ -1,4 +1,4 @@
-import { VIBE_BADGE_ABI, CUSTOM_VIBE_ABI } from "./abi";
+import { VIBE_BADGE_ABI, CUSTOM_VIBE_ABI, PAY_LINKS_ABI } from "./abi";
 
 export const CONTRACT_ADDRESS = "0xEE23d56C3280C14aA9A791E67a89FC7D623EB79A" as `0x${string}`;
 export const V1_ADDRESS = CONTRACT_ADDRESS;
@@ -6,6 +6,10 @@ export const vibeBadgeContract = { address: CONTRACT_ADDRESS, abi: VIBE_BADGE_AB
 
 export const V2_ADDRESS = "0xA4AaCb4F47E700Df36F73fd4288f7276cfF6f5aB" as `0x${string}`;
 export const customVibeContract = { address: V2_ADDRESS, abi: CUSTOM_VIBE_ABI } as const;
+
+// PASTE YOUR DEPLOYED VibePayLinks ADDRESS HERE AFTER REMIX DEPLOY
+export const PAY_LINKS_ADDRESS = "0x0000000000000000000000000000000000000000" as `0x${string}`;
+export const payLinksContract = { address: PAY_LINKS_ADDRESS, abi: PAY_LINKS_ABI } as const;
 
 export const BADGE_THEMES = [
   { id: 1, label: "GENESIS", accent: "#00f5ff", seed: 10 },
